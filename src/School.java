@@ -1,34 +1,26 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class School {
-    ArrayList <String> teachers = new ArrayList<String>();
-    ArrayList<String> students = new ArrayList<String>();
-    ArrayList<String> classes = new ArrayList<String>();
-    String schoolType;
-    ArrayList<String> curriculum = new ArrayList<String>();
+    private  ArrayList <Teacher> listOfTeachers;
+    private  ArrayList<Student> ListOfStudents;
+    private String schoolType;
+    private ArrayList<String> curriculum = new ArrayList<String>();
 
-    public ArrayList<String> getTeachers() {
-        return teachers;
+    public ArrayList<Teacher> getListOfTeachers() {
+        return listOfTeachers;
     }
 
-    public void setTeachers(ArrayList<String> teachers) {
-        this.teachers = teachers;
+    public void setListOfTeachers(ArrayList<Teacher> listOfTeachers) {
+        this.listOfTeachers = listOfTeachers;
     }
 
-    public ArrayList<String> getStudents() {
-        return students;
+    public ArrayList<Student> getListOfStudents() {
+        return ListOfStudents;
     }
 
-    public void setStudents(ArrayList<String> students) {
-        this.students = students;
-    }
-
-    public ArrayList<String> getClasses() {
-        return classes;
-    }
-
-    public void setClasses(ArrayList<String> classes) {
-        this.classes = classes;
+    public void setListOfStudents(ArrayList<Student> listOfStudents) {
+        ListOfStudents = listOfStudents;
     }
 
     public String getSchoolType() {
@@ -47,13 +39,39 @@ public class School {
         this.curriculum = curriculum;
     }
 
-    public void addStudent(){
+    public School(ArrayList<Teacher> listOfTeachers, ArrayList<Student> listOfStudents, String schoolType, ArrayList<String> curriculum) {
+        this.listOfTeachers = listOfTeachers;
+        ListOfStudents = listOfStudents;
+        this.schoolType = schoolType;
+        this.curriculum = curriculum;
+    }
+
+    public  void addStudent(String name, int year, int month, int dayOfMonth, String nationality){
+         Student student1 = new Student(name, LocalDate.of(year,month,dayOfMonth),nationality);
+        ListOfStudents.add(student1);
+
 
 
     }
 
-    public void addTeacher(){
+    public  void addTeacher(String name,int year,int month,int dayOfMonth){
 
+        Teacher teacher1 = new Teacher(name,LocalDate.of(year,month,dayOfMonth));
+        listOfTeachers.add(teacher1);
+
+
+
+
+
+    }
+
+    public static void main(String[] args) {
+
+        School school1 = new School(null,null,"primary School",null);
+
+        school1.addStudent("Izzet",1985,3,1,"dutch");
+
+        System.out.println(school1.getListOfStudents());
 
     }
 

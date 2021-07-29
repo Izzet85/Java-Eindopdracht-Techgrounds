@@ -1,45 +1,22 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class Student {
-    String name;
-    String dateOfBirth;
-    String Class;
-    ArrayList<String> grades = new ArrayList<String>();
-    String profile;
-    ArrayList<String> datesOfAbsent = new ArrayList<String>();
+public class Student extends User {
 
+    private String nationality;
 
-    public String getName() {
-        return name;
+    private String profile;
+    private ArrayList<String> grades;
+    private ArrayList<LocalDate> datesAbsent;
+    private ArrayList<Class> classes;
+
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-//
-//    @Override
-//    public String getClass() {
-//        return Class;
-//    }
-
-    public void setClass(String aClass) {
-        Class = aClass;
-    }
-
-    public ArrayList<String> getGrades() {
-        return grades;
-    }
-
-    public void setGrades(ArrayList<String> grades) {
-        this.grades = grades;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public String getProfile() {
@@ -50,20 +27,37 @@ public class Student {
         this.profile = profile;
     }
 
-    public ArrayList<String> getDatesOfAbsent() {
-        return datesOfAbsent;
+    public ArrayList<String> getGrades() {
+        return grades;
     }
 
-    public void setDatesOfAbsent(ArrayList<String> datesOfAbsent) {
-        this.datesOfAbsent = datesOfAbsent;
+    public void setGrades(ArrayList<String> grades) {
+        this.grades = grades;
     }
 
-    public void student (String name, String nationality){
-
+    public ArrayList<LocalDate> getDatesAbsent() {
+        return datesAbsent;
     }
 
-    public void student (String name,String nationality,String dateOfBirth,String profile){
+    public void setDatesAbsent(ArrayList<LocalDate> datesAbsent) {
+        this.datesAbsent = datesAbsent;
+    }
 
+    public ArrayList<Class> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(ArrayList<Class> classes) {
+        this.classes = classes;
+    }
+
+    public Student(String name, LocalDate dateOfBirth, String profile,String nationality) {
+        super(name,dateOfBirth);
+        this.profile = profile;
+    }
+
+    public Student(String name, LocalDate dateOfBirth, String nationality) {
+        super(name, dateOfBirth);
     }
 
 
