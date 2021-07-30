@@ -51,14 +51,14 @@ public class Student extends User {
         this.classes = classes;
     }
 
-    public Student(String name, LocalDate dateOfBirth, String profile,String nationality) {
-        super(name,dateOfBirth);
-        this.profile = profile;
-    }
-
     public Student(String name, LocalDate dateOfBirth, String nationality) {
         super(name, dateOfBirth);
+        this.nationality = nationality;
     }
 
-
+    public Student(String name, LocalDate dateOfBirth, String nationality, String profile) {
+        super(name, dateOfBirth);
+        this.nationality = nationality;
+        this.profile = profile;
+    }
 }
